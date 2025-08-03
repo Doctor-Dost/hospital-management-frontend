@@ -3,6 +3,8 @@ export interface User {
   id: string;
   email: string;
   role: 'Admin' | 'Doctor';
+  needs_password_update?: boolean;
+
 }
 
 export interface Patient {
