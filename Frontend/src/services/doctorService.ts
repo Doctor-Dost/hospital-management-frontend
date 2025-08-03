@@ -31,4 +31,11 @@ export const doctorService = {
     const response = await api.get(`/doctor/patient/${patientId}/clinical-notes`);
     return response.data;
   },
+
+  downloadDocument: async (patientId: string, documentId: string) => {
+    const response = await api.get(`/doctor/patient/${patientId}/document/${documentId}/download`, {
+      responseType: 'blob',
+    });
+    return response.data;
+  },
 };

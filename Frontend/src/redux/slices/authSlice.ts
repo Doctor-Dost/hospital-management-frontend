@@ -17,7 +17,6 @@ const initialState: AuthState = {
   error: null,
 };
 
-// Check for existing user on app load
 const existingUser = getDecryptedStorage('user');
 if (existingUser) {
   try {
@@ -42,7 +41,7 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.error = null;
       
-      // Store encrypted data
+       
       setEncryptedStorage('user', JSON.stringify(action.payload.user));
       setEncryptedStorage('accessToken', action.payload.accessToken);
     },
@@ -58,7 +57,7 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = null;
       
-      // Clear storage
+       
       removeStorage('user');
       removeStorage('accessToken');
       removeStorage('refreshToken');

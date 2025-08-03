@@ -23,15 +23,10 @@ const Login: React.FC = () => {
     (state: RootState) => state.auth
   );
 
-  useEffect(() => {
-    if (isAuthenticated && user) {
-      if (user.role === 'Admin') {
-        navigate('/admin');
-      } else if (user.role === 'Doctor') {
-        navigate('/doctor');
-      }
-    }
-  }, [isAuthenticated, user, navigate]);
+  // Note: automatic redirection based on authentication status has been removed.
+  // We now handle navigation explicitly after a successful login (see handleSubmit).  This
+  // avoids immediately redirecting a doctor with a temporary password directly to
+  // /doctor before they have a chance to reset their password.
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -70,11 +65,14 @@ const Login: React.FC = () => {
         accessToken: response.accessToken,
       }));
 
-      // Check if user needs password reset
-      if (response.user.role === 'Doctor') {
-        // Check if it's first login (you might need to add this field to user object)
-        // For now, we'll assume all doctors need to reset on first login
+      // Redirect based on role and password update requirement. Doctors are only prompted
+      // to update their password when the backend indicates `needs_password_update` is true.
+      if (response.user.role === 'Doctor' && response.user.needs_password_update) {
         navigate('/reset-password');
+      } else if (response.user.role === 'Doctor') {
+        navigate('/doctor');
+      } else {
+        navigate('/admin');
       }
     } catch (error: any) {
       dispatch(loginFailure(error.response?.data?.error || 'Login failed'));

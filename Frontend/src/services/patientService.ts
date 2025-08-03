@@ -15,12 +15,12 @@ export const patientService = {
   createPatient: async (data: CreatePatientData, files: File[]): Promise<Patient> => {
     const formData = new FormData();
     
-    // Append patient data
+    
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value.toString());
     });
     
-    // Append files
+   
     files.forEach((file) => {
       formData.append('documents', file);
     });
