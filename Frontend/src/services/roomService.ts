@@ -12,6 +12,11 @@ export const roomService = {
     return response.data;
   },
 
+  getRoomById: async (roomId: string): Promise<Room> => {
+    const response = await api.get(`/rooms/${roomId}`);
+    return response.data;
+  },
+
   deleteRoom: async (roomId: string) => {
     const response = await api.put(`/rooms/soft-delete/${roomId}`);
     return response.data;
@@ -40,6 +45,11 @@ export const roomService = {
       bed_id: bedId,
       patient_id: patientId,
     });
+    return response.data;
+  },
+
+  dischargePatient: async (patientId: string) => {
+    const response = await api.put(`/beds/discharge/${patientId}`);
     return response.data;
   },
 };
