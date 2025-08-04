@@ -16,7 +16,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, label, icon }) => {
       to={to}
       className={({ isActive }) =>
         `flex items-center px-4 py-2 rounded-md mb-1 text-sm font-medium transition-colors ${
-          isActive ? 'bg-blue-100 text-blue-600' : 'text-gray-700 hover:bg-gray-100'
+          isActive ? 'bg-orange-100 text-orange-600' : 'text-black-700 hover:bg-gray-100'
         }`
       }
     >
@@ -36,11 +36,10 @@ const DoctorSidebar: React.FC = () => {
   return (
     <aside className="w-64 h-screen bg-white border-r border-gray-200 shadow-sm">
       <div className="h-16 flex items-center justify-center border-b border-gray-200">
-        <h2 className="text-xl font-bold text-blue-600">DoctorDost</h2>
+        <h2 className="text-xl font-bold text-orange-600">DoctorDost</h2>
       </div>
       <nav className="mt-4 px-2 space-y-1">
         <NavItem to="/doctor" label="My Patients" icon={<FaUserInjured />} />
-        {/* Logout button */}
         <button
           onClick={handleLogout}
           className="flex items-center w-full px-4 py-2 rounded-md mb-1 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"

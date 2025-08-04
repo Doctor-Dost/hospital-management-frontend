@@ -77,7 +77,7 @@ const RoomDetails: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Room {room.room_number} Details</h1>
         <button
           onClick={() => navigate(-1)}
-          className="text-blue-600 hover:underline text-sm"
+          className="text-orange-600 hover:underline text-sm"
         >
           &larr; Back
         </button>
@@ -129,7 +129,7 @@ const RoomDetails: React.FC = () => {
             <button
               onClick={handleAddBed}
               disabled={adding}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+              className="px-4 py-2 bg-orange-600 text-white rounded-md disabled:opacity-50"
             >
               {adding ? 'Adding...' : 'Add Bed'}
             </button>

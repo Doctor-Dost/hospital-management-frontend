@@ -68,12 +68,13 @@ const AdminDashboard: React.FC = () => {
     labels: ['Occupied Beds', 'Available Beds'],
     datasets: [
       {
-        label: 'Bed Count',
+        label: 'Occupied Beds',
         data: [stats.occupiedBeds, stats.availableBeds],
         backgroundColor: ['#EF4444', '#10B981'],
         borderColor: ['#DC2626', '#059669'],
         borderWidth: 1,
       },
+     
     ],
   };
 
@@ -103,7 +104,7 @@ const AdminDashboard: React.FC = () => {
         <div className="flex justify-end">
           <button
             onClick={exportData}
-            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="flex items-center px-4 py-2 bg-orange-600 text-white rounded-md transition-colors"
           >
             <FaDownload className="mr-2" />
             Export Data

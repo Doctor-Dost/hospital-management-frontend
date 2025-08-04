@@ -5,9 +5,6 @@ import type { RootState } from '../../../redux/store';
 import { doctorService } from '../../../services/doctorService';
 import { setDoctors } from '../../../redux/slices/doctorSlice';
 
-/**
- * DoctorDetails shows information about a single doctor.
- */
 const DoctorDetails: React.FC = () => {
   const { doctorId } = useParams<{ doctorId: string }>();
   const dispatch = useDispatch();
@@ -46,8 +43,8 @@ const DoctorDetails: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <Link to="/admin/doctors" className="text-blue-600 hover:underline">&larr; Back to list</Link>
-      <h1 className="text-2xl font-semibold text-gray-800">Doctor Details</h1>
+      <Link to="/admin/doctors" className="text-orange-600 hover:underline">&larr; Back to list</Link>
+      <h1 className="text-2xl font-semibold text-black-800">Doctor Details</h1>
       <div className="bg-white p-4 rounded-md shadow-sm space-y-2">
         <p><strong>Name:</strong> {doctor.name}</p>
         <p><strong>Email:</strong> {doctor.user?.email || doctor.email}</p>

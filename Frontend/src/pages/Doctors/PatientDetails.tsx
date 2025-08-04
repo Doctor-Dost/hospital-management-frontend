@@ -95,7 +95,7 @@ const DoctorPatientDetails: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Patient: {patient.name}</h1>
         <button
           onClick={() => navigate(-1)}
-          className="text-blue-600 hover:underline text-sm"
+          className="text-orange-600 hover:underline text-sm"
         >
           &larr; Back
         </button>
@@ -135,7 +135,7 @@ const DoctorPatientDetails: React.FC = () => {
                 <span>{doc.document_name}</span>
                 <button
                   onClick={() => handleDownloadDoc(doc)}
-                  className="text-blue-600 hover:underline text-sm"
+                  className="text-orange-600 hover:underline text-sm"
                 >
                   Download
                 </button>
@@ -170,7 +170,7 @@ const DoctorPatientDetails: React.FC = () => {
           <button
             onClick={handleAddNote}
             disabled={addingNote || newNote.trim().length === 0}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+            className="px-4 py-2 bg-orange-600 text-white rounded-md disabled:opacity-50"
           >
             {addingNote ? 'Adding...' : 'Add Note'}
           </button>

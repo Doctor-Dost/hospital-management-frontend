@@ -23,10 +23,6 @@ const Login: React.FC = () => {
     (state: RootState) => state.auth
   );
 
-  // Note: automatic redirection based on authentication status has been removed.
-  // We now handle navigation explicitly after a successful login (see handleSubmit).  This
-  // avoids immediately redirecting a doctor with a temporary password directly to
-  // /doctor before they have a chance to reset their password.
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -57,16 +53,14 @@ const Login: React.FC = () => {
     try {
       const response = await authService.login(formData);
       
-      // Store refresh token in cookie (handled by backend)
-      setEncryptedStorage('refreshToken', 'true'); // Just a flag
+      setEncryptedStorage('refreshToken', 'true'); 
 
       dispatch(loginSuccess({
         user: response.user,
         accessToken: response.accessToken,
       }));
 
-      // Redirect based on role and password update requirement. Doctors are only prompted
-      // to update their password when the backend indicates `needs_password_update` is true.
+    
       if (response.user.role === 'Doctor' && response.user.needs_password_update) {
         navigate('/reset-password');
       } else if (response.user.role === 'Doctor') {
@@ -83,8 +77,7 @@ const Login: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear error when user starts typing
-    if (errors[name]) {
+     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
@@ -154,11 +147,6 @@ const Login: React.FC = () => {
           </form>
         </div>
 
-        <div className="text-center">
-          <p className="text-sm text-gray-600">
-            Need help? Contact your system administrator
-          </p>
-        </div>
       </div>
     </div>
   );

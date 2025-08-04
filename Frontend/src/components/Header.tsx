@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ title, onMenuClick }) => {
           >
             <FaBars className="text-lg" />
           </button>
-          <h1 className="ml-4 lg:ml-0 text-2xl font-semibold text-gray-900">
+          <h1 className="ml-4 lg:ml-0 text-2xl font-semibold text-Black-900">
             {title}
           </h1>
         </div>

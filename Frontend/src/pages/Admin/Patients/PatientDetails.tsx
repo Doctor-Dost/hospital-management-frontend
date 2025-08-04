@@ -117,7 +117,7 @@ const AdminPatientDetails: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Patient Details</h1>
         <button
           onClick={() => navigate(-1)}
-          className="text-blue-600 hover:underline text-sm"
+          className="text-orange-600 hover:underline text-sm"
         >
           &larr; Back
         </button>
@@ -209,7 +209,7 @@ const AdminPatientDetails: React.FC = () => {
                 <span>{doc.document_name}</span>
                 <button
                   onClick={() => handleDownloadDoc(doc)}
-                  className="text-blue-600 hover:underline text-sm"
+                  className="text-orange-600 hover:underline text-sm"
                 >
                   Download
                 </button>

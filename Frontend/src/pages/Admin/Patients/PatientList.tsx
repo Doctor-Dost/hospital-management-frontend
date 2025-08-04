@@ -30,7 +30,7 @@ const PatientList: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Patients</h1>
         <button
           onClick={() => navigate('/admin/patients/add')}
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="bg-orange-600 text-white px-4 py-2 rounded-md"
         >
           + Add Patient
         </button>
@@ -43,27 +43,27 @@ const PatientList: React.FC = () => {
           <table className="min-w-full divide-y divide-gray-200 border">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Name</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Age</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Gender</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Contact</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Doctor</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Bed</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Status</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Name</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Age</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Gender</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Contact</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Doctor</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Bed</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Status</th>
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {patients.map((p) => (
                 <tr key={p.patient_id}>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.name}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.age}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.gender}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.contact}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.assignedDoctor?.name || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.assignedBed?.bed_number || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.status}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-blue-600">
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.name}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.age}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.gender}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.contact}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.assignedDoctor?.name || '-'}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.assignedBed?.bed_number || '-'}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.status}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-orange-600">
                     <Link to={`/admin/patients/${p.patient_id}`}>View</Link>
                   </td>
                 </tr>

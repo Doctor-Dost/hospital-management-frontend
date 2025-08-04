@@ -267,11 +267,11 @@ const AddPatient: React.FC = () => {
             className="w-full"
           />
         </div>
-        <div className="col-span-2 flex justify-end mt-2">
+        <div className="col-span-2 flex justify-center mt-2">
           <button
             type="submit"
             disabled={loading}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+            className="bg-orange-600 text-white px-4 py-2 rounded-md disabled:opacity-50"
           >
             {loading ? 'Saving...' : 'Save'}
           </button>

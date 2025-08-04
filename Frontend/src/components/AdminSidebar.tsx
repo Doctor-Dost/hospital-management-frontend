@@ -8,15 +8,17 @@ interface NavItemProps {
   to: string;
   label: string;
   icon: React.ReactNode;
+  end?: boolean;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ to, label, icon }) => {
+const NavItem: React.FC<NavItemProps> = ({ to, label, icon , end=false}) => {
   return (
     <NavLink
       to={to}
+      end={end}
       className={({ isActive }) =>
         `flex items-center px-4 py-2 rounded-md mb-1 text-sm font-medium transition-colors ${
-          isActive ? 'bg-blue-100 text-blue-600' : 'text-gray-700 hover:bg-gray-100'
+          isActive ? 'bg-orange-100 text-orange-600' : 'text-black-700 hover:bg-gray-100'
         }`
       }
     >
@@ -37,10 +39,10 @@ const AdminSidebar: React.FC = () => {
   return (
     <aside className="w-64 h-screen bg-white border-r border-gray-200 shadow-sm">
       <div className="h-16 flex items-center justify-center border-b border-gray-200">
-        <h2 className="text-xl font-bold text-blue-600">DoctorDost</h2>
+        <h2 className="text-xl font-bold text-orange-600">DoctorDost</h2>
       </div>
       <nav className="mt-4 px-2 space-y-1">
-        <NavItem to="/admin" label="Dashboard" icon={<FaTachometerAlt />} />
+        <NavItem to="/admin" label="Dashboard" icon={<FaTachometerAlt />}  end/>
         <NavItem to="/admin/doctors" label="Doctors" icon={<FaUserMd />} />
         <NavItem to="/admin/patients" label="Patients" icon={<FaHospitalUser />} />
         <NavItem to="/admin/rooms" label="Rooms & Beds" icon={<FaBed />} />

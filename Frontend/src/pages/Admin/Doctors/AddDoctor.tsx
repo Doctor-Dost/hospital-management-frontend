@@ -121,11 +121,11 @@ const AddDoctor: React.FC = () => {
             className="w-full border border-gray-300 p-2 rounded-md"
           />
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-center">
           <button
             type="submit"
             disabled={loading}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+            className="bg-orange-600 text-white px-4 py-2 rounded-md disabled:opacity-50 "
           >
             {loading ? 'Saving...' : 'Save'}
           </button>

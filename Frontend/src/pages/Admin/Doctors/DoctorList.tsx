@@ -30,7 +30,7 @@ const DoctorList: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800">Doctors</h1>
         <button
           onClick={() => navigate('/admin/doctors/add')}
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="bg-orange-600 text-white px-4 py-2 rounded-"
         >
           + Add Doctor
         </button>
@@ -43,21 +43,21 @@ const DoctorList: React.FC = () => {
           <table className="min-w-full divide-y divide-gray-200 border">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Name</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Email</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Specialization</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Contact</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Name</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Email</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Specialization</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Contact</th>
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {doctors.map((doc) => (
                 <tr key={doc.doctor_id}>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{doc.name}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{doc.user?.email || doc.email}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{doc.specialization}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{doc.contact_number || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-blue-600">
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.name}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.user?.email || doc.email}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.specialization}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.contact_number || '-'}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-orange-700">
                     <Link to={`/admin/doctors/${doc.doctor_id}`}>View</Link>
                   </td>
                 </tr>
