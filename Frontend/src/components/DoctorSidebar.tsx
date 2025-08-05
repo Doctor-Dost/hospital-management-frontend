@@ -36,7 +36,7 @@ const DoctorSidebar: React.FC = () => {
   return (
     <aside className="w-64 h-screen bg-white border-r border-gray-200 shadow-sm">
       <div className="h-16 flex items-center justify-center border-b border-gray-200">
-        <h2 className="text-xl font-bold text-orange-600">DoctorDost</h2>
+        <h2 className="text-xl font-bold text-black-600">DoctorDost</h2>
       </div>
       <nav className="mt-4 px-2 space-y-1">
         <NavItem to="/doctor" label="My Patients" icon={<FaUserInjured />} />

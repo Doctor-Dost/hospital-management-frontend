@@ -64,18 +64,19 @@ const AddDoctor: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 rounded-md shadow-sm">
-      <h1 className="text-2xl font-semibold mb-4">Add Doctor</h1>
+    <div className="max-w-lg mx-auto bg-white p-6 rounded-md shadow-md mt-10">
+      <h1 className="text-3xl font-semibold mb-5 text-center">Add Doctor</h1>
       {errorMsg && <div className="text-red-600 mb-3">{errorMsg}</div>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-1">Name</label>
+          <label className="block text-sm font-semibold mb-2 ">Full Name</label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            placeholder='Enter Full Name'
+            className="w-md bg-gray-200 p-4 rounded-xl"
           />
           {errors.name && <p className="text-xs text-red-600">{errors.name}</p>}
         </div>
@@ -86,7 +87,8 @@ const AddDoctor: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            placeholder='Enter Email'
+            className="w-md bg-gray-200 p-3 rounded-xl"
           />
           {errors.email && <p className="text-xs text-red-600">{errors.email}</p>}
         </div>
@@ -97,7 +99,8 @@ const AddDoctor: React.FC = () => {
             name="specialization"
             value={formData.specialization}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            placeholder='Enter Specialization'
+            className="w-md bg-gray-200 p-3 rounded-xl"
           />
           {errors.specialization && <p className="text-xs text-red-600">{errors.specialization}</p>}
         </div>
@@ -108,7 +111,8 @@ const AddDoctor: React.FC = () => {
             name="contact_number"
             value={formData.contact_number}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            placeholder='Enter Contact Number'
+            className="w-md bg-gray-200 p-3 rounded-xl"
           />
         </div>
         <div>
@@ -118,16 +122,17 @@ const AddDoctor: React.FC = () => {
             name="address"
             value={formData.address}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            placeholder='Enter Address'
+            className="w-md bg-gray-200 p-3 rounded-xl"
           />
         </div>
         <div className="flex justify-center">
           <button
             type="submit"
             disabled={loading}
-            className="bg-orange-600 text-white px-4 py-2 rounded-md disabled:opacity-50 "
+            className="bg-blue-500 text-white px-4 py-2 rounded-3xl"
           >
-            {loading ? 'Saving...' : 'Save'}
+            {loading ? 'Saving...' : 'Add Doctor'}
           </button>
         </div>
       </form>
