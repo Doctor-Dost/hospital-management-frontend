@@ -43,9 +43,9 @@ const DoctorDetails: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <Link to="/admin/doctors" className="text-orange-600 hover:underline">&larr; Back to list</Link>
-      <h1 className="text-2xl font-semibold text-black-800">Doctor Details</h1>
-      <div className="bg-white p-4 rounded-md shadow-sm space-y-2">
+      <Link to="/admin/doctors" className="text-blue-600 hover:underline"> Back to list</Link>
+      <h1 className="text-2xl font-semibold text-black-800 mt-5">Doctor Details</h1>
+      <div className="bg-white p-6 rounded-md shadow-sm space-y-2">
         <p><strong>Name:</strong> {doctor.name}</p>
         <p><strong>Email:</strong> {doctor.user?.email || doctor.email}</p>
         <p><strong>Specialization:</strong> {doctor.specialization}</p>

@@ -25,40 +25,45 @@ const DoctorList: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <div className="space-y-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-800">Doctors</h1>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-900">Doctors</h1>
         <button
           onClick={() => navigate('/admin/doctors/add')}
-          className="bg-orange-600 text-white px-4 py-2 rounded-"
+          className="bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-medium transition duration-200"
         >
-          + Add Doctor
+          Add New Doctor
         </button>
       </div>
       {loading && <p>Loading...</p>}
+
       {error && <p className="text-red-600">{error}</p>}
+
       {!loading && doctors.length === 0 && <p>No doctors found.</p>}
       {!loading && doctors.length > 0 && (
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 border">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Name</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Email</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Specialization</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Contact</th>
-                <th className="px-4 py-2"></th>
+        <div className="overflow-x-auto border-2 border-gray-300 rounded-xl shadow-xl bg-white">
+          <table className="min-w-full text-left text-gray-800">
+            <thead className="bg-gray-50 border-b">
+              <tr className='bg-gray-100 rounded-t-xl'>
+                <th className="px-6 py-3 text-sm font-semibold text-black-700">Name</th>
+                <th className="px-6 py-3 text-sm font-semibold text-black-700">Email</th>
+                <th className="px-6 py-3 text-sm font-semibold text-black-700">Specialization</th>
+                <th className="px-6 py-3 text-sm font-semibold text-black-700">Contact</th>
+                <th className="px-6 py-3">Actions</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200">
               {doctors.map((doc) => (
                 <tr key={doc.doctor_id}>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.name}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.user?.email || doc.email}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.specialization}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{doc.contact_number || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-orange-700">
-                    <Link to={`/admin/doctors/${doc.doctor_id}`}>View</Link>
+                  <td className="px-6 py-4">{doc.name}</td>
+                  <td className="px-6 py-4 text-blue-500">{doc.user?.email || doc.email}</td>
+                  <td className="px-6 py-4 text-blue-500">{doc.specialization}</td>
+                  <td className="px-6 py-4 ">{doc.contact_number || '-'}</td>
+                  <td className="px-6 py-4">
+                    <Link to={`/admin/doctors/${doc.doctor_id}`} 
+                        className="text-blue-500 hover:underline text-sm font-medium">
+                       View
+                    </Link>
                   </td>
                 </tr>
               ))}

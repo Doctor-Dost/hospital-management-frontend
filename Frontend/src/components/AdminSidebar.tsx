@@ -18,7 +18,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, label, icon , end=false}) => {
       end={end}
       className={({ isActive }) =>
         `flex items-center px-4 py-2 rounded-md mb-1 text-sm font-medium transition-colors ${
-          isActive ? 'bg-orange-100 text-orange-600' : 'text-black-700 hover:bg-gray-100'
+          isActive ? 'bg-blue-100 text-black-600' : 'text-black-700 hover:bg-gray-100'
         }`
       }
     >
@@ -39,7 +39,7 @@ const AdminSidebar: React.FC = () => {
   return (
     <aside className="w-64 h-screen bg-white border-r border-gray-200 shadow-sm">
       <div className="h-16 flex items-center justify-center border-b border-gray-200">
-        <h2 className="text-xl font-bold text-orange-600">DoctorDost</h2>
+        <h2 className="text-xl font-bold text-blue-600">DoctorDost</h2>
       </div>
       <nav className="mt-4 px-2 space-y-1">
         <NavItem to="/admin" label="Dashboard" icon={<FaTachometerAlt />}  end/>
@@ -48,7 +48,7 @@ const AdminSidebar: React.FC = () => {
         <NavItem to="/admin/rooms" label="Rooms & Beds" icon={<FaBed />} />
         <button
           onClick={handleLogout}
-          className="flex items-center w-full px-4 py-2 rounded-md mb-1 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+          className="flex items-center w-full px-4 py-2 rounded-md mb-1 text-sm font-medium text-black-700 hover:bg-gray-100 transition-colors"
         >
           <FaSignOutAlt className="mr-3" /> Logout
         </button>

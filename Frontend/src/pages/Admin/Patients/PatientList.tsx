@@ -27,12 +27,12 @@ const PatientList: React.FC = () => {
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-800">Patients</h1>
+        <h1 className="text-2xl font-semibold text-black-800">Patients Management</h1>
         <button
           onClick={() => navigate('/admin/patients/add')}
           className="bg-orange-600 text-white px-4 py-2 rounded-md"
         >
-          + Add Patient
+           Add New Patient
         </button>
       </div>
       {loading && <p>Loading...</p>}
@@ -50,19 +50,20 @@ const PatientList: React.FC = () => {
                 <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Doctor</th>
                 <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Bed</th>
                 <th className="px-4 py-2 text-left text-sm font-medium text-black-700">Status</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-black-700">View Details</th>
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {patients.map((p) => (
                 <tr key={p.patient_id}>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.name}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.age}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.gender}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.contact}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.assignedDoctor?.name || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.assignedBed?.bed_number || '-'}</td>
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-black-800">{p.status}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.name}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.age}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.gender}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.contact}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.assignedDoctor?.name || '-'}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.assignedBed?.bed_number || '-'}</td>
+                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-800">{p.status}</td>
                   <td className="px-4 py-2 whitespace-nowrap text-sm text-orange-600">
                     <Link to={`/admin/patients/${p.patient_id}`}>View</Link>
                   </td>
